@@ -1,4 +1,5 @@
 import { API_URL } from "../../constants"
+import styles from "../../../styles/books.module.css"
 
 interface IParmas {
     params: {
@@ -19,13 +20,15 @@ export async function generateMetadata({params: {name}} : IParmas) {
 export default async function listPage({params: {name}} : IParmas) {
     const bookList = await getBooks(name)
     return (
-        <div>
+        <div className={styles.container}>
             {bookList.results.books.map(book => 
-                (<div key={book.primary_isbn10}>
+                (<div key={book.primary_isbn10} className={styles.book}>
                     <img src={book.book_image} />
-                    <h2>{book.title}</h2>
-                    <h2>{book.author}</h2>
-                    <a href={book.buy_links[0].url} target={"_blank"}>Buy Now</a>
+                    <div>
+                        <h2>{book.title}</h2>
+                        <h3>{book.author}</h3>
+                        <a href={book.buy_links[0].url} target={"_blank"}>Buy Now &rarr;</a>
+                    </div>
                 </div>)
             )}
         </div>

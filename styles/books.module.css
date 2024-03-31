@@ -1,0 +1,40 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100vw;
+    padding: 0px;
+    position: absolute;
+}
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #919090;
+    border-radius: 10px;
+}
+.book img {
+    width: 100%;
+    border-radius: 10px;
+}
+.book div {
+    padding: 20px;
+}
+.book div h2 {
+    margin-bottom: 10px;
+}
+.book div h3 {
+    color: rgb(52, 130, 165);
+    margin-bottom: 30px;
+}
+.book div a {
+    border: 1px solid black;
+    padding: 10px;
+}
+.book div a:hover {
+    border: 3px solid black;
+}
+.book div a:active {
+    background-color: #919090;
+    color: white;
+}

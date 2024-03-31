@@ -1,6 +1,7 @@
 import "../styles/global.css"
 import Navigation from "../components/navigation"
 import { Metadata } from "next"
+import styles from "../styles/root.module.css"
 
 export const metadata : Metadata = {
     title: {
@@ -19,7 +20,7 @@ export const metadata : Metadata = {
       <html lang="en">
         <body>
             <Navigation />
-            {children}
+            <body className={styles.container}>{children}</body>
         </body>
       </html>
     )
