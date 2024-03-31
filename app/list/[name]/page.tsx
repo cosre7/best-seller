@@ -1,6 +1,6 @@
 import { API_URL } from "../../constants"
 
-export async function getBooks(name:string) {
+async function getBooks(name:string) {
     const response = await fetch(`${API_URL}/list?name=${name}`)
     return response.json()
 }
